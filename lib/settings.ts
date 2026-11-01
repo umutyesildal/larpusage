@@ -34,6 +34,31 @@ export const defaultSettings: Settings = {
   manual: [],
 };
 
+// The hosted build cannot scan a laptop, so it starts from a composed profile
+// instead of an empty one. Local installs still start with no added sources.
+const hostedDemo: ManualEntry[] = [
+  {
+    id: "demo-zcode",
+    label: "ZCode",
+    tool: "zcode",
+    tokens: 5_800_000_000,
+    from: "2026-04-01",
+    to: "2026-10-31",
+    shape: "ramp",
+    model: "glm-5.3",
+  },
+  {
+    id: "demo-devin",
+    label: "Devin",
+    tool: "devin",
+    tokens: 2_900_000_000,
+    from: "2026-06-01",
+    to: "2026-10-31",
+    shape: "ramp",
+    model: "swe-2-high",
+  },
+];
+
 const DIR = DATA_DIR;
 const FILE = dataPath("settings.json");
 
@@ -48,7 +73,9 @@ export async function loadSettings(): Promise<Settings> {
       manual: Array.isArray(parsed.manual) ? parsed.manual : [],
     };
   } catch {
-    return defaultSettings;
+    return process.env.VERCEL
+      ? { ...defaultSettings, manual: hostedDemo }
+      : defaultSettings;
   }
 }
 
