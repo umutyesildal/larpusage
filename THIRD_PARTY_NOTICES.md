@@ -38,3 +38,8 @@ used here only to identify the tool a usage number came from.
 The visual direction was dealt by the `design-taste-frontend` skill and is not
 copied from any product. No source code from Token Larper or ccusage is
 included in this repository.
+
+## Typeface
+
+Inter (latin subset) is bundled at `app/fonts/inter-latin.woff2` under the SIL
+Open Font License 1.1. The license text is at `app/fonts/OFL.txt`.
