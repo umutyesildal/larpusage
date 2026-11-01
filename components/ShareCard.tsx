@@ -6,6 +6,7 @@ import type { Snapshot } from "@/lib/types";
 import type { Settings } from "@/lib/settings";
 import { compact, duration, money } from "@/lib/format";
 import { providerById } from "@/lib/providers";
+import { GITHUB_LABEL } from "@/lib/links";
 import { ProviderLogo } from "./ProviderLogo";
 import styles from "./share-card.module.css";
 
@@ -195,6 +196,7 @@ export function ShareCard({
             </span>
           ))}
         </div>
+        <div className={styles.repo}>{GITHUB_LABEL}</div>
       </div>
     </div>
   );

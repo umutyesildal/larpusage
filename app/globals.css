@@ -149,6 +149,23 @@ a {
   color: #000;
 }
 
+.pill.action {
+  background: var(--text);
+  color: #08080a;
+  font-weight: 500;
+  padding: 0 12px 0 10px;
+}
+
+.pill.action:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.pill.action svg {
+  display: block;
+  opacity: 0.72;
+}
+
 .avatar {
   width: 26px;
   height: 26px;
@@ -620,6 +637,12 @@ a {
   .heat-wrap {
     --cell: 12px;
     --cellgap: 4px;
+  }
+}
+
+@media (max-width: 700px) {
+  .pill.gh {
+    display: none;
   }
 }
 

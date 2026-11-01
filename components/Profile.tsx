@@ -11,6 +11,7 @@ import { Studio } from "./Studio";
 import { ShareButton } from "./ShareButton";
 import { ProviderLogo } from "./ProviderLogo";
 import { providerById } from "@/lib/providers";
+import { GITHUB_URL } from "@/lib/links";
 
 function streakOf(days: Snapshot["days"]) {
   const active = new Set(days.filter((d) => d.tokens > 0).map((d) => d.day));
@@ -193,7 +194,25 @@ export function Profile({
               </button>
             </div>
             <ShareButton snapshot={snapshot} settings={settings} />
-            <button className="pill" onClick={() => setOpen(true)} aria-label="Open studio">
+            <a
+              className="pill gh"
+              href={GITHUB_URL}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open the GitHub repository"
+            >
+              GitHub
+            </a>
+            <button className="pill action" onClick={() => setOpen(true)} aria-label="Open studio">
+              <svg width="12" height="12" viewBox="0 0 16 16" aria-hidden>
+                <path
+                  d="M8 3.5v9M3.5 8h9"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+              </svg>
               Studio
             </button>
           </div>

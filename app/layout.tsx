@@ -23,13 +23,20 @@ export const metadata: Metadata = {
     siteName: "larpusage",
     title: "larpusage — token profile",
     description: "Your AI token usage, as a personality.",
-    images: [{ url: "/og.png", width: 1200, height: 630 }],
+    images: [
+      {
+        url: "/og-larp.png",
+        width: 1200,
+        height: 630,
+        alt: "larpking token profile with API value and provider breakdown",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "larpusage — token profile",
     description: "Your AI token usage, as a personality.",
-    images: ["/og.png"],
+    images: ["/og-larp.png"],
   },
 };
 

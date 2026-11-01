@@ -294,6 +294,15 @@
   letter-spacing: 0.02em;
 }
 
+.repo {
+  flex: 0 0 auto;
+  font-size: 11px;
+  line-height: 1;
+  color: #8f8f96;
+  white-space: nowrap;
+  letter-spacing: 0;
+}
+
 
 .value {
   margin-top: auto;
